@@ -7,7 +7,6 @@ import midi.factory.MidiEventFactory;
 import midi.factory.StandardMidiEventFactoryAbstract;
 import midi.strategy.instrument.*;
 import parser.MidiCsvParser;
-import midi.*;
 import java.util.List;
 import midi.strategy.pitch.*;
 
@@ -27,19 +26,20 @@ public class Main {
             
             MidiEventFactory factory = factoryAbstract.createFactory();
 
-            // Dynamically choose an instrument strategy (Acoustic Grand Piano, Electric Bass Guitar, or Trumpet)
-            InstrumentStrategy instrumentStrategy = new AcousticGrandPianoStrategy();
-            instrumentStrategy.playInstrument(track, 0);  // Apply Acoustic Grand Piano to channel 0
-
-            // Uncomment the following lines to apply other instrument strategies
-            // InstrumentStrategy instrumentStrategy = new ElectriBassGuitarStrategy();
-            // instrumentStrategy.playInstrument(track, 1);  // Apply Electric Bass Guitar to channel 1
-
-            // InstrumentStrategy instrumentStrategy = new TrumpetStrategy();
-            // instrumentStrategy.playInstrument(track, 2);  // Apply Trumpet to channel 2
-
-            // Dynamically choose a pitch strategy (HigherPitch or LowerPitch)
+            
+            //play instruments / choose instrument to play and what track. 
+            InstrumentStrategy instrumentStrategy = new ElectriBassGuitarStrategy (); 
+            instrumentStrategy.playInstrument(track, 0);
+            instrumentStrategy = new TrumpetStrategy();
+            instrumentStrategy.playInstrument(track, 1);
+            instrumentStrategy = new AcousticGrandPianoStrategy(); 
+            instrumentStrategy.playInstrument(track, 2); 
+           
+            //choose pitch 
             PitchStrategy pitchStrategy = new HigherPitchStrategy();
+            //PitchStrategy pitchStrategy = new LowerPitchStrategy();
+
+            
 
             // Iterate through the MIDI events and apply the pitch modification
             for (MidiEventData event : midiEvents) {
