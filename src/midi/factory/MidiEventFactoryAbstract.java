@@ -1,9 +1,15 @@
 package midi.factory;
-
-import javax.sound.midi.ShortMessage;
-import javax.sound.midi.MidiEvent;
-import javax.sound.midi.InvalidMidiDataException;
-
+/**
+ * 
+ * 
+ * function that returns a new {@MidiEventFactory} 
+ * 
+ */
 public interface MidiEventFactoryAbstract {
+	
+	/**
+	 * create and return a new instance of {@MidiEventFactory}
+	 * @return new {@MidiEventFactory} instance
+	 */
 	MidiEventFactory createFactory();
 }

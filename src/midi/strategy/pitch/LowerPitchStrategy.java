@@ -1,10 +1,19 @@
 package midi.strategy.pitch;
 
-public class LowerPitchStrategy implements PitchStrategy{
+/**
+ * Strategy for decreasing the pitch of a MIDI note by 2 semitones.
+ * Implements the {@code PitchStrategy} interface.
+ */
+public class LowerPitchStrategy implements PitchStrategy {
 
-	@Override
-	public int modifyPitch(int note) {
-		return note - 2; //lower the pitch
-	}
-
+    /**
+     * Modifies the pitch by decreasing it by 2 semitones.
+     *
+     * @param note The original MIDI note to be modified.
+     * @return The modified MIDI note, 2 semitones lower.
+     */
+    @Override
+    public int modifyPitch(int note) {
+        return note - 2; // Lower the pitch
+    }
 }
