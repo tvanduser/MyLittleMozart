@@ -41,6 +41,6 @@ public class LegatoMidiEventFactory implements MidiEventFactory {
         // Legato: Increase the duration by 80 ticks
         ShortMessage message = new ShortMessage();
         message.setMessage(ShortMessage.NOTE_OFF, channel, note, 0);
-        return new MidiEvent(message, tick + 80);
+        return new MidiEvent(message, tick + 80); //increase the duration by 80 ticks of the original length
     }
 }
