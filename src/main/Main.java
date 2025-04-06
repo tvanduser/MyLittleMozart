@@ -28,13 +28,16 @@ public class Main {
 
             
             //play instruments / choose instrument to play and what track. 
-            InstrumentStrategy instrumentStrategy = new ElectriBassGuitarStrategy (); 
-            instrumentStrategy.playInstrument(track, 0);
-            instrumentStrategy = new TrumpetStrategy();
-            instrumentStrategy.playInstrument(track, 1);
-            instrumentStrategy = new AcousticGrandPianoStrategy(); 
-            instrumentStrategy.playInstrument(track, 2); 
+            InstrumentStrategy pianoStrategy = new AcousticGrandPianoStrategy();
+            InstrumentStrategy trumpetStrategy = new TrumpetStrategy();
+            InstrumentStrategy bassStrategy = new ElectricBassGuitarStrategy();
            
+            pianoStrategy.playInstrument(track, 0);  
+            trumpetStrategy.playInstrument(track, 1);
+            bassStrategy.playInstrument(track, 2);    
+
+
+            
             //choose pitch 
             PitchStrategy pitchStrategy = new HigherPitchStrategy();
             //PitchStrategy pitchStrategy = new LowerPitchStrategy();

@@ -9,7 +9,7 @@ import javax.sound.midi.Track;
  * Strategy for selecting the Electric Bass (fingered) instrument.
  * Implements the {@code InstrumentStrategy} interface.
  */
-public class ElectriBassGuitarStrategy implements InstrumentStrategy {
+public class ElectricBassGuitarStrategy implements InstrumentStrategy {
 
     /**
      * Sends a PROGRAM_CHANGE MIDI message to set the instrument to Electric Bass (program 33).
